@@ -1,0 +1,19 @@
+{
+    "name": "nfq-rho/filemanager-bundle",
+    "type": "symfony-bundle",
+    "description": "This bundle provides ability to upload custom files from TinyMCE editor.",
+    "keywords": ["NFQ", "filemanager", "cmspage"],
+    "require": {
+        "php": ">=5.4",
+        "symfony/symfony": "~2.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.7"
+    },
+    "autoload": {
+        "psr-4": { "Nfq\\FileManagerBundle\\": "" }
+    },
+    "branch-alias" : {
+        "dev-master" : "1.1-dev"
+    }
+}

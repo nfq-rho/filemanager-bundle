@@ -1,0 +1,16 @@
+#Admin
+#These routes are prefix with /admin/file-manager in routing.yml
+nfq_filemanager_dialog:
+    path: /dialog
+    methods: [ GET ]
+    defaults: { _controller: 'NfqFileManagerBundle:Admin/FileManager:dialog' }
+
+nfq_filemanager_upload:
+    path: /upload
+    methods: [ POST ]
+    defaults: { _controller: 'NfqFileManagerBundle:Admin/FileManager:upload' }
+
+nfq_filemanager_delete:
+    path: /delete
+    methods: [ POST ]
+    defaults: { _controller: 'NfqFileManagerBundle:Admin/FileManager:delete' }

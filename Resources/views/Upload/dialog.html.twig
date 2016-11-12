@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Upload an image</title>
+    {% block css %}
+        <link rel="stylesheet" href="{{ asset('bundles/nfqfilemanager/css/dialog.css') }}">
+    {% endblock %}
+    {% block javascript %}
+        <script type="text/javascript" src="{{ asset('bundles/nfqfilemanager/js/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/nfqfilemanager/js/dialog.js') }}"></script>
+    {% endblock %}
+</head>
+<body>
+
+<form class="form-inline" id="upl" name="upl" action="{{ uploadUrl }}" method="post" enctype="multipart/form-data"
+      target="upload_target" onsubmit="nfqFileMangerDialog.inProgress();">
+
+    <div id="upload_in_progress" class="upload_infobar">
+        <img src="{{ asset('bundles/nfqfilemanager/img/spinner.gif') }}" width="16" height="16" class="spinner">
+        Upload in progress&hellip;
+        <div id="upload_additional_info"></div>
+    </div>
+    <div id="upload_infobar" class="upload_infobar"></div>
+
+    <p id="upload_form_container">
+        <input id="uploader" name="userfile" type="file" class="jbFileBox"
+               onChange="document.upl.submit(); nfqFileMangerDialog.inProgress();">
+    </p>
+</form>
+
+{% for image in images %}
+    <div class="image-item">
+        <div class="image">
+            <img src="/uploads/{{ image }}" width="100" height="100"/>
+        </div>
+        <div class="image-delete">x</div>
+    </div>
+{% endfor %}
+
+<iframe id="upload_target" name="upload_target" src=""></iframe>
+<input type="hidden" value="{{ path('nfq_filemanager_delete') }}" id="image-delete-url"/>
+</body>
+</html>

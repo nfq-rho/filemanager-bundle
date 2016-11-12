@@ -1,0 +1,4 @@
+_nfq_filemanager_admin:
+    resource: @NfqFileManagerBundle/Resources/config/routing_admin.yml
+    prefix: /admin/file-manager
+    options: { i18n: false }
