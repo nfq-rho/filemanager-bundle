@@ -5,7 +5,7 @@
     "keywords": ["NFQ", "filemanager", "cmspage"],
     "require": {
         "php": ">=5.4",
-        "symfony/symfony": "3.1.*"
+        "symfony/symfony": "3.*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.7"
